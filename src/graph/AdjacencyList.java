@@ -6,6 +6,7 @@ public class AdjacencyList {
 
 	private LinkedList<Integer> graph[];
 
+	@SuppressWarnings("unchecked")
 	AdjacencyList(int countOfNodes) {
 
 		graph = new LinkedList[countOfNodes];

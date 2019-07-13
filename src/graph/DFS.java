@@ -4,17 +4,11 @@ import java.util.Iterator;
 
 public class DFS {
 
-	private static int countOfNodes;
-	static AdjacencyList graph;
+	public static void main(String... args) {
 
-	DFS() {
-		countOfNodes = 9;
-	}
+		int countOfNodes = 9;
 
-	public static void main(String[] args) {
-		new DFS();
-		
-		graph = new AdjacencyList(countOfNodes);
+		AdjacencyList graph = new AdjacencyList(countOfNodes);
 
 		graph.addEdge(1, 2);
 		graph.addEdge(1, 3);
@@ -23,34 +17,30 @@ public class DFS {
 		graph.addEdge(2, 5);
 
 		graph.addEdge(3, 5);
-		graph.addEdge(3, 8);
 		graph.addEdge(3, 7);
+		graph.addEdge(3, 8);
 
-		search(1);
+		DFS dfs = new DFS();
 
+		dfs.traverse(graph, new boolean[countOfNodes], 1);
 	}
 
-	private static void search(int start) {
+	void traverse(AdjacencyList graph, boolean[] explored, int node) {
 
-		boolean explored[] = new boolean[countOfNodes];
+		explored[node] = true;
+		System.out.print(node + " ");
 
-		searchUtil(start, explored);
-	}
-
-	private static void searchUtil(int start, boolean[] explored) {
-
-		explored[start] = true;
-		System.out.println(start + " ");
-
-		Iterator<Integer> iterator = graph.getConnectedNodes(start).listIterator();
+		Iterator<Integer> iterator = graph.getConnectedNodes(node).listIterator();
 
 		while (iterator.hasNext()) {
 			int n = iterator.next();
 
 			if (!explored[n]) {
-				searchUtil(n, explored);
+				traverse(graph, explored, n);
+				System.out.println();
 			}
 		}
+
 	}
 
 }
