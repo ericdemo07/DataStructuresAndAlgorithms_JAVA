@@ -25,4 +25,28 @@ public class AdjacencyList {
 
 		return graph[node];
 	}
+	
+	
+	void bootstrap() {
+		graph[0].add(1);
+		graph[0].add(2);
+		
+		graph[1].add(3);
+		graph[1].add(4);
+		
+		graph[2].add(4);
+		graph[2].add(5);
+		graph[2].add(6);
+		
+		
+//		graph[1].add(0);
+//		graph[2].add(0);
+//		
+//		graph[3].add(1);
+//		graph[4].add(1);
+//		
+//		graph[4].add(2);
+//		graph[5].add(2);
+//		graph[6].add(2);
+	}
 }
