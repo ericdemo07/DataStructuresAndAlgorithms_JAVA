@@ -4,12 +4,14 @@ public class Factorial {
 
 	public static void main(String... args) {
 
-		int n = 3;
+		int N = 4;
 
-		System.out.println(findRecursively(n));
+		System.out.println(findRecursively(N));
 	}
 
 	private static int findRecursively(int n) {
+		System.out.println(n);
+
 		if (n == 0) {
 			return 1;
 		} else {
