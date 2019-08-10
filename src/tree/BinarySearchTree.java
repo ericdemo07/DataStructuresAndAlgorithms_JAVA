@@ -22,12 +22,18 @@ public class BinarySearchTree {
 		tree.insert(13);
 		tree.insert(8);
 		tree.insert(4);
+		tree.insert(7);
+		tree.insert(19);
+		tree.insert(6);
+		tree.insert(11);
+		// tree.preOrderTraverse();
+		//
+		// System.out.println(tree.preOrderTraverseWithoutRecursion().toString());
+		// System.out.println("max :" + tree.findMaxWithRecursion());
+		// System.out.println("min :" + tree.findMin());
 
-		tree.preOrderTraverse();
-
-		System.out.println(tree.preOrderTraverseWithoutRecursion().toString());
-		System.out.println("max :" + tree.findMaxWithRecursion());
-		System.out.println("min :" + tree.findMin());
+		System.out.println(tree.countElements());
+		System.out.println("count :" + count1);
 	}
 
 	private void insert(int data) {
@@ -114,4 +120,41 @@ public class BinarySearchTree {
 		return min;
 	}
 
+	private boolean elementExist(int element) {
+
+		return elementExistUtil(root, element);
+	}
+
+	private static int count1 = 0;
+
+	private boolean elementExistUtil(Node tree, int element) {
+		if (tree == null) {
+			return false;
+		}
+		if (element == tree.data) {
+			return true;
+		}
+		if (element < tree.data) {
+			return elementExistUtil(tree.left, element);
+		}
+		return elementExistUtil(tree.right, element);
+	}
+
+	private int countElements() {
+		return countElementsUtil(root, 0);
+	}
+
+	private int countElementsUtil(Node tree, int count) {
+		count1++;
+
+		if (tree == null) {
+			return count;
+		}
+
+		int left = count + (tree.left != null ? countElementsUtil(tree.left, count) : 0);
+		int right = count + (tree.right != null ? countElementsUtil(tree.right, count) : 0);
+
+		return left + right + 1;
+	}
 }
+
