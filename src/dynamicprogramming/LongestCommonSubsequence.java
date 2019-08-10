@@ -5,7 +5,7 @@ public class LongestCommonSubsequence {
 
 	public static void main(String[] args) {
 		char[] temp1 = { 'a', 'e', 'i', 'o', 'u' };
-		char[] temp2 = { 'e', 'o', 'u' };
+		char[] temp2 = { 'e', 'e', 'o', 'u' };
 
 		int[][] memo = new int[temp1.length + 1][temp2.length + 1];
 

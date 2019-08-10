@@ -14,10 +14,10 @@ public class CatalanNumbers {
 		System.out.println("count: " + count);
 
 		// memo will contain catalin numbers
-		// memo[0] = memo[1] = 1;
-		// for (int i = 0; i < memo.length; i++) {
-		// System.out.println("catalin i : "+i+" , n : "+memo[i]);
-		// }
+		 memo[0] = memo[1] = 1;
+		 for (int i = 0; i < memo.length; i++) {
+		 System.out.println("catalin i : "+i+" , n : "+memo[i]);
+		 }
 	}
 
 	private static int catalan(int n, int[] memo) {
