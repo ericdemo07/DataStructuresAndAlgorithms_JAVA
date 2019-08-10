@@ -32,7 +32,7 @@ public class BinarySearchTree {
 		// System.out.println("max :" + tree.findMaxWithRecursion());
 		// System.out.println("min :" + tree.findMin());
 
-		System.out.println(tree.countElements());
+		System.out.println(tree.countElementWithoutRecursion());
 		System.out.println("count :" + count1);
 	}
 
@@ -156,5 +156,25 @@ public class BinarySearchTree {
 
 		return left + right + 1;
 	}
-}
 
+	private int countElementWithoutRecursion() {
+		int count = 0;
+		if (root == null) {
+			return count;
+		}
+		Stack<Node> stack = new Stack<Node>();
+		stack.push(root);
+		while (!stack.isEmpty()) {
+			Node tempNode = stack.pop();
+			count++;
+
+			if (tempNode.right != null) {
+				stack.push(tempNode.right);
+			}
+			if (tempNode.left != null) {
+				stack.push(tempNode.left);
+			}
+		}
+		return count;
+	}
+}
