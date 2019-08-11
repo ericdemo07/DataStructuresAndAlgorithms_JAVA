@@ -3,17 +3,17 @@ package tree;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class BinarySearchTree {
+public class BinarySearchTreeNovice {
 
 	Node root;
 
-	public BinarySearchTree() {
+	public BinarySearchTreeNovice() {
 		root = null;
 	}
 
 	public static void main(String[] args) {
 
-		BinarySearchTree tree = new BinarySearchTree();
+		BinarySearchTreeNovice tree = new BinarySearchTreeNovice();
 
 		tree.insert(5);
 		tree.insert(2);
