@@ -42,12 +42,12 @@ public class BinarySearchTreeMediocre {
 
 	}
 
-	private void insert(int data) {
-		root = insertUtil(root, data);
-	}
-
 	private Node getRootNode() {
 		return root;
+	}
+
+	private void insert(int data) {
+		root = insertUtil(root, data);
 	}
 
 	private Node insertUtil(Node tree, int data) {
