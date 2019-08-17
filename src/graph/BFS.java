@@ -2,6 +2,7 @@ package graph;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class BFS {
 
@@ -32,8 +33,7 @@ public class BFS {
 
 	private static void search(int start) {
 		boolean discovered[] = new boolean[countOfNodes];
-		LinkedList<Integer> queue = new LinkedList<Integer>();
-
+		Queue<Integer> queue = new LinkedList<Integer>();
 		discovered[start] = true;
 		queue.add(start);
 
