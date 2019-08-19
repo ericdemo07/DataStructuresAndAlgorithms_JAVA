@@ -14,7 +14,6 @@ public class BinarySearchTreeNovice {
 	public static void main(String[] args) {
 
 		BinarySearchTreeNovice tree = new BinarySearchTreeNovice();
-
 		tree.insert(5);
 		tree.insert(2);
 		tree.insert(1);

@@ -1,15 +1,15 @@
 package tree;
 
-public class BinarySearchTreeMediocreTwo {
+public class BinarySearchTreeMediocre2 {
 
 	Node root;
 
-	public BinarySearchTreeMediocreTwo() {
+	public BinarySearchTreeMediocre2() {
 		root = null;
 	}
 
 	public static void main(String[] args) {
-		BinarySearchTreeMediocreTwo tree = new BinarySearchTreeMediocreTwo();
+		BinarySearchTreeMediocre2 tree = new BinarySearchTreeMediocre2();
 
 		tree.insert(5);
 		tree.insert(2);
