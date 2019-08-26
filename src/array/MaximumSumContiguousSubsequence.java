@@ -10,7 +10,7 @@ public class MaximumSumContiguousSubsequence {
 	}
 
 	private static int findSum(int[] arr) {
-		int maxSum = arr[0], sum = 0;
+		int maxSum = arr[0], sum = Integer.MIN_VALUE / 2;// think
 
 		for (int i = 0; i < arr.length; i++) {
 			sum = Math.max(sum + arr[i], arr[i]);
