@@ -18,6 +18,7 @@ public class DummyPad {
 			subArray.triplets(arr);
 			count = count - 1;
 		}
+		in.close();
 	}
 
 	private void triplets(int[] arr) {

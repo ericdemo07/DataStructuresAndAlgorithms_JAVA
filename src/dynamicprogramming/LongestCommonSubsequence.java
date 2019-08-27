@@ -1,5 +1,6 @@
 package dynamicprogramming;
 
+//https://www.youtube.com/watch?v=sSno9rV8Rhg
 public class LongestCommonSubsequence {
 	static int count = 0;
 
@@ -9,7 +10,7 @@ public class LongestCommonSubsequence {
 
 		int[][] memo = new int[temp1.length + 1][temp2.length + 1];
 
-		// i am doubtful is not this takes O(n2) time
+		// i am doubtful does not this takes O(n2) time
 		for (int row = 0; row < temp1.length + 1; row++) {
 			for (int col = 0; col < temp2.length; col++) {
 				memo[row][col] = -1;
