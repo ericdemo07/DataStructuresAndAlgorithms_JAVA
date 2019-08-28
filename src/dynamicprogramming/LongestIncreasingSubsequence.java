@@ -6,27 +6,37 @@ public class LongestIncreasingSubsequence {
 		int[] arr = { 3, 4, -1, 0, 6, 2, 3, 0 };
 
 		LongestIncreasingSubsequence lis = new LongestIncreasingSubsequence();
-		System.out.println(lis.bottomUp(arr));
-
+		// System.out.println(lis.bottomUp(arr));
+		lis.lis(arr);
+		System.out.println(count);
 	}
 
-	// next two method under costruction
-	private int LIS(int[] arr) {
+	static int count = 0;
 
-		return LISUtil(0, 1, arr);
+	public int lis(int arr[]) {
+		int maxLen = 0;
+		for (int i = 0; i < arr.length - 1; i++) {
+			int len = lisUtil(arr, i + 1, arr[i]);
+			System.out.println(len);
+
+			if (len > maxLen) {
+				maxLen = len;
+			}
+		}
+		return maxLen + 1;
 	}
 
-	private int LISUtil(int i, int j, int[] arr) {
-		if (j == arr.length) {
+	private int lisUtil(int arr[], int i, int lastNum) {
+		count++;
+		if (i == arr.length) {
 			return 0;
 		}
-		if (i == j - 1) {
-			return LISUtil(0, j + 1, arr);
+		int t1 = 0;
+		if (arr[i] > lastNum) {
+			t1 = 1 + lisUtil(arr, i + 1, arr[i]);
 		}
-		if (arr[i] < arr[j]) {
-			return 1 + LISUtil(i + 1, j, arr);
-		}
-		return LISUtil(i + 1, j, arr);
+		int t2 = lisUtil(arr, i + 1, lastNum);
+		return Math.max(t1, t2);
 	}
 
 	private int bottomUp(int[] arr) {
@@ -35,13 +45,15 @@ public class LongestIncreasingSubsequence {
 		for (int i = 0; i < arr.length; i++) {
 			lis[i] = 1;
 		}
+
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < i; j++) {
 				if (arr[i] > arr[j] && lis[i] < lis[j] + 1) {
-					lis[i] = lis[i] + 1;
+					lis[i] = lis[j] + 1;
 				}
 			}
 		}
+
 		int max = Integer.MIN_VALUE;
 
 		for (int i = 0; i < arr.length; i++) {

@@ -18,23 +18,4 @@ public class MaximumSumContiguousSubsequence {
 		}
 		return maxSum;
 	}
-
-	// private static int findSum(int[] arr) {
-	// int maxSum = 0;
-	//
-	// for (int i = 0; i < arr.length; i++) {
-	// int currentSum = 0;
-	// for (int j = i; j < arr.length; j++) {
-	// currentSum = currentSum + arr[j];
-	// System.out.println("current sum1 :" + currentSum + " : maxsum : " + maxSum);
-	//
-	// if (currentSum > maxSum) {
-	// maxSum = currentSum;
-	// }
-	// }
-	// System.out.println("current sum2 :" + currentSum);
-	// }
-	// return maxSum;
-	// }
-
 }
