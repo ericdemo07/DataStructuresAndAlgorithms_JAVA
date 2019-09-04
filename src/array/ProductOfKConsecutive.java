@@ -7,7 +7,7 @@ public class ProductOfKConsecutive {
 	public static void main(String[] args) {
 
 		int[] arr = { 1, 3, 3, 6, 5, 7, 0, -3 };
-		int k = 5;
+		int k = 3;
 
 		arr = process(arr, k);
 
